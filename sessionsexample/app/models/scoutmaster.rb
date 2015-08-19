@@ -1,0 +1,2 @@
+class Scoutmaster < User
+end
