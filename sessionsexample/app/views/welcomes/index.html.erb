@@ -1,0 +1,43 @@
+<h1>Welcome to Scouthut!</h1>
+
+<h3>Signup</h3>
+<%= form_for @user do |f| %>
+  <p>
+      <%= f.label :email %>
+      <%= f.text_field :email, :type => 'email', :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password, :required => true, :type => 'password' %>
+  </p>
+
+  <p>
+      <%= radio_button_tag(:type, "Scout") %>
+      <%= label_tag(:type_scout, "I am a Scout") %>
+      <%= radio_button_tag(:type, "Scoutmaster") %>
+      <%= label_tag(:type_scoutmaster, "I am a Scoutmaster") %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+<h3>Signin</h3>
+<%= form_for :session, url: login_path do |f| %>
+  <p>
+      <%= f.label :email %>
+      <%= f.text_field :email, :type => 'email', :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <%= f.text_field :password, :required => true, :type => 'password' %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
